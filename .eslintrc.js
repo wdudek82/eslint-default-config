@@ -38,7 +38,7 @@ module.exports = {
         checkChildContextTypes: false,
       },
     ],
-    'arrow-parens': ['error', 'as-needed'],
+    'arrow-parens': ['error', 'always'],
     'space-before-function-paren': 0,
     'function-paren-newline': ['error', 'consistent'],
     'no-unused-vars': [
@@ -53,6 +53,7 @@ module.exports = {
     'no-unused-expressions': ['error', {allowTaggedTemplates: true}],
     'no-underscore-dangle': 0,
     'react/destructuring-assignment': 0,
+    'react/jsx-boolean-value': 'always',
     'react/jsx-one-expression-per-line': 0,
     'react/jsx-tag-spacing': [
       'error',
