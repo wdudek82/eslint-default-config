@@ -7,6 +7,14 @@ module.exports = {
     node: true,
     jest: true,
   },
+  parserOptions: {
+    ecmaFeatures: {
+      impliedStrict: true,
+      jsx: true
+    },
+    ecmaVersion: 2019,
+    sourceType: 'module',
+  },
   rules: {
     quotes: ['error', 'single', { avoidEscape: true }],
     'arrow-body-style': 0,
