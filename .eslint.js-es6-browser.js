@@ -21,8 +21,25 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    quotes: ['error', 'single', { avoidEscape: true }],
+    /* Best Practices */
+    'no-unused-expressions': ['error', { allowTaggedTemplates: true }],
+    'no-unused-vars': [
+      'error',
+      {
+        vars: 'all',
+        args: 'none',
+        ignoreRestSiblings: false,
+        caughtErrors: 'all',
+      },
+    ],
+
+    /* ECMAScript 6 */
     'arrow-body-style': 0,
+    'arrow-parens': ['error', 'always'],
+    'function-paren-newline': ['error', 'consistent'],
+    'no-confusing-arrow': 0,
+
+    /* Stylistic */
     'comma-dangle': [
       'warn',
       {
@@ -33,23 +50,11 @@ module.exports = {
         functions: 'ignore',
       },
     ],
-    'arrow-parens': ['error', 'always'],
     'space-before-function-paren': 0,
-    'function-paren-newline': ['error', 'consistent'],
-    'no-unused-vars': [
-      'error',
-      {
-        vars: 'all',
-        args: 'none',
-        ignoreRestSiblings: false,
-        caughtErrors: 'all',
-      },
-    ],
-    'no-unused-expressions': ['error', { allowTaggedTemplates: true }],
+    quotes: ['error', 'single', { avoidEscape: true }],
     'no-underscore-dangle': 0,
-    'object-curly-newline': ['error', { consistent: true }],
     'operator-linebreak': 0,
     'implicit-arrow-linebreak': 0,
-    'no-confusing-arrow': 0,
+    'object-curly-newline': ['error', { consistent: true }],
   },
 };
