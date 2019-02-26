@@ -15,7 +15,6 @@ module.exports = {
   parserOptions: {
     ecmaFeatures: {
       impliedStrict: true,
-      jsx: true,
     },
     ecmaVersion: 2018,
     sourceType: 'module',
