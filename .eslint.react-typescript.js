@@ -25,9 +25,28 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'react'],
   rules: {
-    quotes: ['error', 'single', { avoidEscape: true }],
+    /* Best Practices */
+    'react/forbid-prop-types': [
+      2,
+      {
+        forbid: ['any'],
+        checkContextTypes: false,
+        checkChildContextTypes: false,
+      },
+    ],
+    'no-unused-expressions': ['error', { allowTaggedTemplates: true }],
+
+    /* ECMAScript 6 */
+    'arrow-parens': ['error', 'always'],
+    'no-confusing-arrow': 0,
     'arrow-body-style': 0,
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+
+    /* Stylistic */
+    quotes: ['error', 'single', { avoidEscape: true }],
+    'no-underscore-dangle': 0,
+    'object-curly-newline': ['error', { consistent: true }],
+    'operator-linebreak': 0,
+    'implicit-arrow-linebreak': 0,
     'comma-dangle': [
       'warn',
       {
@@ -38,26 +57,10 @@ module.exports = {
         functions: 'ignore',
       },
     ],
-    'jsx-a11y/href-no-hash': [0],
-    'jsx-a11y/anchor-is-valid': [
-      'error',
-      {
-        components: [''],
-        specialLink: ['hrefLeft', 'hrefRight'],
-        aspects: ['noHref', 'invalidHref', 'preferButton'],
-      },
-    ],
-    'react/forbid-prop-types': [
-      2,
-      {
-        forbid: ['any'],
-        checkContextTypes: false,
-        checkChildContextTypes: false,
-      },
-    ],
-    'arrow-parens': ['error', 'always'],
-    'space-before-function-paren': 0,
     'function-paren-newline': ['error', 'consistent'],
+    'space-before-function-paren': 0,
+    
+    /* Variables */
     'no-unused-vars': [
       'error',
       {
@@ -67,8 +70,20 @@ module.exports = {
         caughtErrors: 'all',
       },
     ],
-    'no-unused-expressions': ['error', { allowTaggedTemplates: true }],
-    'no-underscore-dangle': 0,
+    
+    /* JSX Accessibility */
+    'jsx-a11y/href-no-hash': 'off',
+    'jsx-a11y/anchor-is-valid': [
+      'warn',
+      {
+        components: [''],
+        specialLink: ['hrefLeft', 'hrefRight'],
+        aspects: ['noHref', 'invalidHref', 'preferButton'],
+      },
+    ],
+    
+    /* React */
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/destructuring-assignment': 0,
     'react/jsx-boolean-value': 1,
     'react/jsx-one-expression-per-line': 0,
@@ -81,9 +96,5 @@ module.exports = {
         beforeClosing: 'never',
       },
     ],
-    'object-curly-newline': ['error', { consistent: true }],
-    'operator-linebreak': 0,
-    'implicit-arrow-linebreak': 0,
-    'no-confusing-arrow': 0,
   },
 };
