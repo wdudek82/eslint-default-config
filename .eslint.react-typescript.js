@@ -7,6 +7,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
     'plugin:@typescript-eslint/recommended',
+    'plugin:jsx-a11y/recommended',
     'react-app',
     'plugin:prettier/recommended',
     'airbnb',
@@ -23,7 +24,17 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'react'],
+  plugins: ['@typescript-eslint', 'react', 'jsx-a11y', 'import'],
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
+    'import/resolver': {
+      typescript: {
+        directory: './tsconfig.json'
+      },
+    },
+  },
   rules: {
     /* Best Practices */
     'react/forbid-prop-types': [
@@ -42,6 +53,7 @@ module.exports = {
     'arrow-body-style': 0,
 
     /* Stylistic */
+    indent: ['error', 2],
     quotes: ['error', 'single', { avoidEscape: true }],
     'no-underscore-dangle': 0,
     'object-curly-newline': ['error', { consistent: true }],
@@ -59,7 +71,10 @@ module.exports = {
     ],
     'function-paren-newline': ['error', 'consistent'],
     'space-before-function-paren': 0,
-    
+
+    /* Stylistic TypeScript */
+    '@typescript-eslint/indent': ['error', 2],
+
     /* Variables */
     'no-unused-vars': [
       'error',
@@ -70,7 +85,7 @@ module.exports = {
         caughtErrors: 'all',
       },
     ],
-    
+
     /* JSX Accessibility */
     'jsx-a11y/href-no-hash': 'off',
     'jsx-a11y/anchor-is-valid': [
@@ -81,9 +96,9 @@ module.exports = {
         aspects: ['noHref', 'invalidHref', 'preferButton'],
       },
     ],
-    
+
     /* React */
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.tsx'] }],
     'react/destructuring-assignment': 0,
     'react/jsx-boolean-value': 1,
     'react/jsx-one-expression-per-line': 0,
