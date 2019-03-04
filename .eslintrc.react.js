@@ -75,7 +75,6 @@ module.exports = {
     ],
     'object-curly-newline': ['error', { consistent: true }],
     'operator-linebreak': 0,
-    'jsx-a11y/label-has-for': 0,
     'implicit-arrow-linebreak': 0,
     'no-confusing-arrow': 0,
   },
