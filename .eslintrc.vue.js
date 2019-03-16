@@ -3,10 +3,16 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: ['airbnb-base', 'plugin:vue/recommended'],
+  extends: [
+    'plugin:vue/recommended',
+    'eslint:recommended',
+    'prettier/vue',
+    // 'plugin:prettier/recommended'
+  ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
+    Vue: 'readonly',
   },
   parserOptions: {
     ecmaFeatures: {
@@ -16,9 +22,12 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['vue'],
-
   rules: {
-    /* Best Practices */
+    'no-console': 1,
+
+    /**
+     * Best Practices
+     */
     'no-unused-expressions': ['error', { allowTaggedTemplates: true }],
     'no-unused-vars': [
       'error',
@@ -30,13 +39,17 @@ module.exports = {
       },
     ],
 
-    /* ECMAScript 6 */
+    /**
+     * ECMAScript 6
+     */
     'arrow-body-style': 0,
     'arrow-parens': ['error', 'always'],
     'function-paren-newline': ['error', 'consistent'],
     'no-confusing-arrow': 0,
 
-    /* Stylistic */
+    /**
+     * Stylistic
+     */
     'comma-dangle': [
       'warn',
       {
@@ -54,7 +67,9 @@ module.exports = {
     'implicit-arrow-linebreak': 0,
     'object-curly-newline': ['error', { consistent: true }],
 
-    /* Vue */
+    /**
+     * Vue
+     */
     'vue/max-attributes-per-line': [
       'error',
       {
