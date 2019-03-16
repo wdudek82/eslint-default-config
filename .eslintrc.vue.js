@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: 'airbnb-base',
+  extends: ['airbnb-base', 'plugin:vue/recommended'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -53,5 +53,17 @@ module.exports = {
     'operator-linebreak': 0,
     'implicit-arrow-linebreak': 0,
     'object-curly-newline': ['error', { consistent: true }],
+
+    /* Vue */
+    'vue/max-attributes-per-line': [
+      'error',
+      {
+        singleline: 20,
+        multiline: {
+          max: 1,
+          allowFirstLine: false,
+        },
+      },
+    ],
   },
 };
