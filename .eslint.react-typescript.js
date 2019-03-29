@@ -31,7 +31,7 @@ module.exports = {
     },
     'import/resolver': {
       typescript: {
-        directory: './tsconfig.json'
+        directory: './tsconfig.json',
       },
     },
   },
@@ -53,7 +53,7 @@ module.exports = {
     'arrow-body-style': 0,
 
     /* Stylistic */
-    indent: ['error', 2],
+    indent: ['error', 2, { SwitchCase: 1 }],
     quotes: ['error', 'single', { avoidEscape: true }],
     'no-underscore-dangle': 0,
     'object-curly-newline': ['error', { consistent: true }],
@@ -98,7 +98,10 @@ module.exports = {
     ],
 
     /* React */
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.tsx'] }],
+    'react/jsx-filename-extension': [
+      1,
+      { extensions: ['.js', '.jsx', '.tsx'] },
+    ],
     'react/destructuring-assignment': 0,
     'react/jsx-boolean-value': 1,
     'react/jsx-one-expression-per-line': 0,
